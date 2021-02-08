@@ -40,4 +40,47 @@
   }
 }
 
+*.hover-zoom{
+  transition: all .1s ease-in-out;
+}
 
+*.hover-zoom:hover{
+  transform: scale(1.1);
+}
+
+/* Hover Shine */
+figure.hover-shine  {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	overflow: hidden;
+	position: relative;
+}
+figure.hover-shine::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+figure.hover-shine:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
