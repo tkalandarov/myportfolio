@@ -22,7 +22,7 @@ body > div {
 
 body section{
   width: 100%;
-  height: 100%;
+  height: fit-content;
   margin: 0 auto;
 }
 
@@ -31,11 +31,16 @@ section .section__inner{
   margin: 0 auto;
 }
 
+section .section__inner > h1{
+  margin: 0.3em;
+}
+
 /*========== HOME SECTION ===========*/
 
 #home {
   text-align: center;
   height: 100vh;
+  max-height: none;
 }
 
 #home img {
@@ -77,20 +82,15 @@ body .text-wrapper * {
 /*========== PHOTOS SECTION ===========*/
 
 #photos .photos-container{
-  width: 100%;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .photos-container figure{
-    max-width: 800px;
-    width: 30%;
-    min-width: 200px;
     margin: 20px;
   }
 
@@ -103,3 +103,40 @@ body .text-wrapper * {
       margin: 10px;
     }
   }*/
+
+  /*========== PROJECTS SECTION ===========*/
+
+  #projects .projects-container{
+    max-width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .projects-container .project{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+  }
+  .projects-container .project .techs{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .projects-container .project .techs > *{
+    margin: 10px;
+  }
+  .projects-container .project .techs img{
+    width: 60px;
+  }
+
+  #projects a h2{
+    width: 310px;
+    margin-top: 50px;
+  }
