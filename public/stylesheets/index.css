@@ -18,6 +18,12 @@ body > div {
   margin: 0;
 }
 
+/*========== HEADER ===========*/
+
+header{
+  position: absolute; /* This is to set #home to 100vh */
+}
+
 /*========== ALL SECTIONS ===========*/
 
 body section{
@@ -43,8 +49,11 @@ section .section__inner > h1{
   max-height: none;
 }
 
+#home .section__inner{
+  padding-top: 100px;
+}
+
 #home img {
-  margin-top: 4.5em;
   transform: translateY(10%);
 }
 .loaded #home img {
@@ -58,6 +67,16 @@ section .section__inner > h1{
 
 body .text-wrapper * {
   transform: translateY(120%);
+}
+
+@media only screen and (max-width: 900px) {
+  #home img {
+    transform: translateY(0%);
+    width: 200px;
+  }
+  body .text-wrapper * {
+    transform: translateY(30%);
+  }
 }
 
 .loaded .text-wrapper * {
@@ -79,6 +98,12 @@ body .text-wrapper * {
   animation: bounce 2s infinite;
 }
 
+@media only screen and (max-width: 900px) {
+  .arrow{
+      margin: 15% 0;
+  }
+}
+
 /*========== PHOTOS SECTION ===========*/
 
 #photos .photos-container{
@@ -98,16 +123,22 @@ body .text-wrapper * {
     width: 100%;
   }
 
-  /*@media only screen and (max-width: 960px) {
-    #photos img{
-      margin: 10px;
+  @media only screen and (max-width: 1000px) {
+    #photos .photos-container > div:nth-child(2) {
+      display: none;
     }
-  }*/
+  }
+
+  @media only screen and (max-width: 600px) {
+    #photos .photos-container{
+      flex-direction: column;
+    }
+  }
 
   /*========== PROJECTS SECTION ===========*/
 
   #projects .projects-container{
-    max-width: 100vw;
+    max-width: 100%;
     display: flex;
     flex-flow: row wrap;
     margin: 0 auto;
@@ -120,7 +151,18 @@ body .text-wrapper * {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 25px;
+    margin-top: 25px;
+    width: 45%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .projects-container .project{
+      width: 100%;
+    }
+  }
+
+  .projects-container .project figure img{
+    width: 100%;
   }
   .projects-container .project .techs{
     margin-left: 10px;
@@ -136,7 +178,17 @@ body .text-wrapper * {
     width: 60px;
   }
 
+  @media only screen and (max-width: 1600px) {
+    .projects-container .project {
+      flex-direction: column;
+    }
+    .projects-container .project .techs{
+      flex-direction: row;
+        }
+  }
+
   #projects a h2{
     width: 310px;
     margin-top: 50px;
   }
+

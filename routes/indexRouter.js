@@ -9,4 +9,10 @@ router.get("/", function (req, res, next) {
   res.render("index.hbs", { title: "Home - Timur Kalandarov"});
 });
 
+/* GET bio page. */
+router.get("/biography", function (req, res, next) {
+  res.locals.css = ["biography.css"];
+  res.render("biography.hbs", { title: "Biography - Timur Kalandarov"});
+});
+
 module.exports = router;

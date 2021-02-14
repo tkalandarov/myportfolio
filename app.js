@@ -8,8 +8,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/indexController');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/indexRouter');
+
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 hbs.registerPartials(__dirname + "/views/partials");
 
