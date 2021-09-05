@@ -7,12 +7,18 @@
   <title>{{{title}}}</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+  <!-- Normalize -->
+  <link rel="stylesheet" href="/lib/normalize/normalize.min.css" />
+
   <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/main.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/partial/header.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='/stylesheets/partial/footer.css'>
-  <!-- FONTS -->
+  <!-- Open Sans -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="/lib/fontawesome/font-awesome.css" />
+
 
   {{#each css}}
   <link rel="stylesheet" href="/stylesheets/{{this}}">
@@ -21,12 +27,11 @@
 </head>
 
 <body>
-  {{{preloadContent}}}
-  <div id="page-wrapper">
-        {{> header}}
+  {{> header}}
     {{{body}}}
-        {{> footer}}
-  </div>
+  {{> footer}}
+
+  <script src="/javascripts/jquery.min.js"></script>
 
   {{#each js}}
   <script src="/javascripts/{{this}}"></script>
