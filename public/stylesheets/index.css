@@ -177,6 +177,21 @@ section p {
   text-align: center;
 }
 
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper img{
+  width: 600px;
+  height: 300px;
+  object-fit: fill;
+}
+
+.swiper-pagination-bullet-active{
+  background: #F26B50 !important;
+}
+
 /* ================ Contact ==================== */
 
 #contact i {
@@ -195,7 +210,10 @@ section p {
   padding-left: 15px;
 }
 
-#contact .vertical *{
-  margin: 5px;
+#contact .vertical h3{
+  margin: 0;
+}
+#contact .vertical p{
+  margin-bottom: 5px;
 }
 
