@@ -1,60 +1,30 @@
-@import "animations.css";
 @import "colors.css";
 
 html {
-  box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 
 body {
   background-color: var(--bg-color);
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
   font-weight: 700;
   font-size: 15pt;
   color: var(--text-color);
-}
 
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 3.5vw !important;
-  }
-}
-
-body.is-preload *,
-body.is-preload *:before,
-body.is-preload *:after {
-  -moz-animation: none !important;
-  -webkit-animation: none !important;
-  -ms-animation: none !important;
-  animation: none !important;
-  -moz-transition: none !important;
-  -webkit-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: underline;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
 }
 
-a:visited, a:link {
+a:visited,
+a:link {
   color: var(--text-color);
 }
 
@@ -118,8 +88,8 @@ table {
   margin-bottom: 2em;
 }
 
-p{
-  color:var(--secondary-text-color);
+p {
+  color: var(--secondary-text-color);
 }
 
 a.underline:after {
@@ -139,12 +109,12 @@ a.underline:hover:after {
   left: 0;
 }
 
-.inlined-text > *{
+.inlined-text > * {
   display: inline-block;
 }
 
 /* ======================= Buttons =========================== */
-.accent-btn{
+.accent-btn {
   background-color: var(--accent-color);
   padding: 10px;
   font-size: 16pt;

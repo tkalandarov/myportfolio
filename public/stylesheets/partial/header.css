@@ -1,14 +1,14 @@
 /*========== HEADER ===========*/
 
 header {
-  width: 100%;
   height: 50px;
-  padding: 25px;
+  padding: 25px 10px;
+  padding-top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 40px auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -16,6 +16,13 @@ header {
     flex-direction: column;
     height: auto;
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: 763px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -39,7 +46,7 @@ header ul.nav {
   max-width: 600px;
 }
 
-header ul.nav>li {
+header ul.nav > li {
   display: table-cell;
   position: relative;
   padding: 10px 0;
@@ -51,7 +58,7 @@ header ul.nav>li {
   text-decoration: none;
 }
 
-.nav-link:hover {
+.nav .nav-link:hover {
   color: var(--accent-color);
 }
 
@@ -70,4 +77,117 @@ header ul.nav>li {
 
 .email-wrapper a span {
   font-size: 12pt;
+}
+
+/* MOBILE NAV */
+
+header .nav-mobile {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 100;
+
+  transform: translateX(100%);
+
+  background-color: var(--bg-color);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  animation: slideFromSide;
+  animation-fill-mode: forwards;
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53)
+}
+
+@keyframes slideFromSide {
+  100%{
+    transform: translateX(0);
+  }
+  
+}
+
+.nav-mobile-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.nav-mobile-links li {
+  width: 100%;
+  height: 50px;
+  text-align: left;
+}
+
+.nav-mobile-links li a{
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 10px;
+  padding-left: 10%;
+  line-height: 50px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-mobile-links li:hover {
+  background-color: #252525;
+}
+
+header .nav-mobile .nav-head {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+header .nav-mobile-close {
+  right: 30px;
+  top: 30px;
+}
+
+header .nav-mobile-open {
+  display: none;
+}
+
+header .nav-mobile-close,
+header .nav-mobile-open {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+header .nav-mobile-close:hover,
+header .nav-mobile-open:hover {
+  color: #c9c9c9;
+}
+
+@media only screen and (max-width: 763px) {
+  header .nav-mobile.active {
+    display: flex;
+  }
+  header ul.nav {
+    display: none;
+  }
+
+  header > .email-wrapper {
+    display: none;
+  }
+
+  header .nav-mobile-open {
+    display: initial;
+  }
 }

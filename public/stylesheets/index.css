@@ -1,10 +1,5 @@
 /*========== HEADER ===========*/
 
-header {
-  /*position: absolute;*/
-  /* This is to set #home to 100vh */
-}
-
 a.email{
   text-decoration: none;
 }
@@ -22,9 +17,9 @@ main> :nth-child(even) {
 }
 
 section .section__inner {
-  padding: 75px 25px;
-  margin: 0 auto;
+  padding: 75px 0;
   width: 80%;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -62,12 +57,13 @@ section .section__title:not(:empty)::after {
 section.two-sided .section__inner {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 
 section.two-sided .section__inner>* {
-  flex: 50%;
-  padding: 0 25px;
+  flex: 40%;
+  padding: 0;
 }
 
 section p {
@@ -99,7 +95,6 @@ section p {
   align-items: baseline;
   justify-content: space-evenly;
   position: relative;
-  width: 100%;
 }
 
 #home .name h1 {
@@ -121,13 +116,49 @@ section p {
 #home img {
   position: absolute;
   left: 50%;
-  top: 20px;
+  bottom: 0;
   transform: translateX(-50%);
+  transition: all .3s;
+  filter: opacity(.5);
+}
+
+#home img:hover {
+  filter: opacity(1);
 }
 
 #me {
-  width: 600px;
+  max-width: 600px;
+  width: 90%;
 }
+
+@media only screen and (max-width: 763px) {
+  #home .section__inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+  #home .name h1 {
+    font-size: 20pt;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  #home .info{
+    width: auto;
+  }
+  
+  #home .info h1 {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  #home img{
+    bottom: 0;
+    top: auto;
+  }
+}
+
 
 #home .section__inner::after {
   content: '';
@@ -139,11 +170,25 @@ section p {
   left: 0;
 }
 
+/*============ ABOUT ==============*/
+
+#about .left{
+  margin-right: 25px;
+}
+
+@media only screen and (max-width: 763px) {
+  #about .right{
+    display: none;
+  }
+}
+
+
 /*============ SKILLS ==============*/
 
 #skills .skills-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -157,13 +202,21 @@ section p {
 }
 
 .skills-wrapper .skill {
-  flex: 30%;
-  padding: 50px;
+  flex: 25%;
+  padding: 50px 10px;
+}
+
+@media only screen and (max-width: 763px) {
+  .skills-wrapper .skill {
+    flex: initial;
+    padding: 20px 10px;
+  }
 }
 
 .skill-center {
   background-color: #1F1F1F;
   border-bottom: 10px solid var(--accent-color);
+  margin: 0 10px;
   /*border-right: 10px solid var(--accent-color);*/
 }
 
@@ -178,12 +231,12 @@ section p {
 }
 
 .swiper {
-  width: 600px;
+  width: 100%;
   height: 300px;
 }
 
 .swiper img{
-  width: 600px;
+  width: inherit;
   height: 300px;
   object-fit: fill;
 }
@@ -217,3 +270,8 @@ section p {
   margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 763px) {
+  #contact .vertical h3{
+    font-size: 17px;
+  }
+}
